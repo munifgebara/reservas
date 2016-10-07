@@ -1,0 +1,41 @@
+	<div class="row">
+	
+	    <div class="col-md-5">
+	      <a ui-sref="sala.insert" class="btn btn-primary">
+	        <i class="glyphicon glyphicon-plus"></i>Novo
+	      </a>
+	
+	      <button type="button" class="btn btn-danger" ng-click="sala.methods.delete(selectedValues)" gumga-confirm="Deseja remover?">
+	        <i class="glyphicon glyphicon-trash"></i>Remover
+	      </button>
+	    </div>
+	
+	    <div class="col-md-7">
+	        <gumga-query search="sala.methods.search(field,param)" advanced-search="sala.methods.advancedSearch(param)" saved-filters="sala.methods.getQuery(page)">
+	            <search-field label="descricao" field="descricao"></search-field>
+	            <search-field label="numero" field="numero"></search-field>
+	            <advanced-search-field  type="string"  label="descricao" field="descricao"></advanced-search-field>
+	            <advanced-search-field  type="number"  label="numero" field="numero"></advanced-search-field>
+	        </gumga-query>
+	    </div>
+	</div>
+	
+	<div class="full-width-without-padding">
+	    <gumga-list sort="sala.methods.sort(field, dir)"
+	           class="table-striped table-condensed"
+	            data="sala.data"
+	            configuration="tableConfig">
+	    </gumga-list>
+	</div>
+
+	<uib-pagination ng-model="page"
+	            max-size="10"
+	            boundary-links="true"
+	            previous-text="?"
+	            next-Text="?"
+	            first-text="?"
+	            last-text="?"
+	            items-per-page="sala.pageSize"
+	            total-items="sala.count"
+	            ng-change="sala.methods.get(page)">
+	</uib-pagination>

@@ -1,0 +1,19 @@
+<form name="ColaboradorForm" gumga-form novalidate>
+		
+	<div gumga-form-class="nome">
+		<label gumga-translate-tag="colaborador.nome">nome</label>
+		<input gumga-error type="text" name="nome" ng-model="colaborador.data.nome"  class="form-control" />
+	</div>		
+	<div gumga-form-class="matricula">
+		<label gumga-translate-tag="colaborador.matricula">matricula</label>
+		<input gumga-error type="text" name="matricula" ng-model="colaborador.data.matricula"  class="form-control" />
+	</div>    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="colaborador.list"
+            submit="colaborador.methods.put(colaborador.data)"
+            position="right"
+            valid="ColaboradorForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>

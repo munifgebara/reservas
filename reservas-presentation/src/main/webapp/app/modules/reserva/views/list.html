@@ -1,0 +1,51 @@
+	<div class="row">
+	
+	    <div class="col-md-5">
+	      <a ui-sref="reserva.insert" class="btn btn-primary">
+	        <i class="glyphicon glyphicon-plus"></i>Novo
+	      </a>
+	
+	      <button type="button" class="btn btn-danger" ng-click="reserva.methods.delete(selectedValues)" gumga-confirm="Deseja remover?">
+	        <i class="glyphicon glyphicon-trash"></i>Remover
+	      </button>
+	    </div>
+	
+	    <div class="col-md-7">
+	        <gumga-query search="reserva.methods.search(field,param)" advanced-search="reserva.methods.advancedSearch(param)" saved-filters="reserva.methods.getQuery(page)">
+	            <search-field label="dataInicio" field="datainicio"></search-field>
+	            <search-field label="descricao" field="descricao"></search-field>
+	            <search-field label="sala" field="sala"></search-field>
+	            <search-field label="evento" field="evento"></search-field>
+	            <search-field label="recurso" field="recurso"></search-field>
+	            <search-field label="dataFim" field="datafim"></search-field>
+	            <search-field label="colaborador" field="colaborador"></search-field>
+	            <advanced-search-field  type="date"  label="dataInicio" field="datainicio"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="descricao" field="descricao"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="sala" field="sala"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="evento" field="evento"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="recurso" field="recurso"></advanced-search-field>
+	            <advanced-search-field  type="date"  label="dataFim" field="datafim"></advanced-search-field>
+	            <advanced-search-field  type="string"  label="colaborador" field="colaborador"></advanced-search-field>
+	        </gumga-query>
+	    </div>
+	</div>
+	
+	<div class="full-width-without-padding">
+	    <gumga-list sort="reserva.methods.sort(field, dir)"
+	           class="table-striped table-condensed"
+	            data="reserva.data"
+	            configuration="tableConfig">
+	    </gumga-list>
+	</div>
+
+	<uib-pagination ng-model="page"
+	            max-size="10"
+	            boundary-links="true"
+	            previous-text="?"
+	            next-Text="?"
+	            first-text="?"
+	            last-text="?"
+	            items-per-page="reserva.pageSize"
+	            total-items="reserva.count"
+	            ng-change="reserva.methods.get(page)">
+	</uib-pagination>

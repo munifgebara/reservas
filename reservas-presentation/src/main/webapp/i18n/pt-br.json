@@ -1,0 +1,117 @@
+{
+  "coisa": {
+    "title": "Coisa"
+  ,"menulabel": "Coisa "
+  ,"id": "Identificador"
+  ,"descricao": "Descri????o"
+  ,"valor": "Valor"
+  ,"ativo": "Ativo"
+  ,"new": "Novo"
+  ,"base": "Coisa"
+  ,"list": "Listar Coisa"
+  ,"edit": "Editar Coisa"
+  ,"insert": "Inserir Coisa"
+  }
+    ,"sala":{
+        "title":"Sala"
+        ,"menulabel": "Sala"
+        ,"edit": "Editar Sala"
+        ,"insert": "Inserir Sala"
+        ,"list": "Consulta Sala"
+        ,"id": "id"
+        ,"descricao":"Descricao"
+        ,"numero":"Numero"
+    }
+
+    ,"recurso":{
+        "title":"Recurso"
+        ,"menulabel": "Recurso"
+        ,"edit": "Editar Recurso"
+        ,"insert": "Inserir Recurso"
+        ,"list": "Consulta Recurso"
+        ,"id": "id"
+        ,"tipo":"Tipo"
+        ,"codigo":"Codigo"
+        ,"descricao":"Descricao"
+    }
+
+    ,"colaborador":{
+        "title":"Colaborador"
+        ,"menulabel": "Colaborador"
+        ,"edit": "Editar Colaborador"
+        ,"insert": "Inserir Colaborador"
+        ,"list": "Consulta Colaborador"
+        ,"id": "id"
+        ,"nome":"Nome"
+        ,"matricula":"Matricula"
+    }
+
+    ,"reserva":{
+        "title":"Reserva"
+        ,"menulabel": "Reserva"
+        ,"edit": "Editar Reserva"
+        ,"insert": "Inserir Reserva"
+        ,"list": "Consulta Reserva"
+        ,"id": "id"
+        ,"datainicio":"DataInicio"
+        ,"descricao":"Descricao"
+        ,"sala":"Sala"
+        ,"evento":"Evento"
+        ,"recurso":"Recurso"
+        ,"datafim":"DataFim"
+        ,"colaborador":"Colaborador"
+    }
+
+,"address": {
+  "cep": "CEP"
+,"numero": "N??mero"
+,"bairro":"Bairro"
+,"uf":"Estado"
+,"pais": "Pa??s"
+,"complemento": "Complemento"
+,"logradouro": "Logradouro"
+,"tipologradouro": "Tipo de Logradouro"
+,"localidade": "Localiza????o"
+}
+,"formbuttons": {
+  "inserir": "Continuar inserindo"
+}
+,"table": {
+  "select": "Selecionar Todos",
+  "clean": "Limpar pesquisa"
+}
+, "advanced": {
+  "gt": "maior que"
+,"ge": "maior igual"
+,"lt": "menor que"
+,"le": "menor igual"
+,"eq": "igual "
+,"ne": "diferente de"
+,"in": "faz parte de"
+,"not_in": "n??o faz parte de"
+,"contains": "cont??m"
+,"starts_with": "come??a com"
+,"ends_with": "termina com"
+,"not_contains": "n??o cont??m"
+},
+  "general":{
+    "coisa": "Coisa Base",
+    "forgot": "Esqueceu sua Senha?"
+  },
+  "welcome":{
+     "menulabel": "Welcome"
+   },
+   "home": {
+  "menulabel": "In??cio"
+},
+"gumgatagdefinition":{
+    "name":"Nome"
+    ,"menuLabel": "Tags"
+},
+"configuration": {
+  "menulabel": "Configura????es",
+  "gumgatagdefinition": "Tags",
+  "gumgacustomfield": "Atributos Gen??ricos"
+}
+
+}

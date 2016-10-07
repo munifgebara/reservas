@@ -1,0 +1,25 @@
+<form name="RecursoForm" gumga-form novalidate>
+		
+	<div gumga-form-class="tipo">
+		<label gumga-translate-tag="recurso.tipo">tipo</label>
+		<select class="form-control" gumga-error name="tipo" ng-model="recurso.data.tipo">
+			<option  ng-selected="value.value == recurso.data.tipo"  value="{{value.value}}" ng-repeat="value in valueTipoRecurso">{{value.label}}</option>
+		</select>
+	</div>		
+	<div gumga-form-class="codigo">
+		<label gumga-translate-tag="recurso.codigo">codigo</label>
+		<input gumga-error type="text" name="codigo" ng-model="recurso.data.codigo"  class="form-control" />
+	</div>		
+	<div gumga-form-class="descricao">
+		<label gumga-translate-tag="recurso.descricao">descricao</label>
+		<input gumga-error type="text" name="descricao" ng-model="recurso.data.descricao"  class="form-control" />
+	</div>    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <gumga-form-buttons
+            back="recurso.list"
+            submit="recurso.methods.put(recurso.data)"
+            position="right"
+            valid="RecursoForm.$valid"
+            confirm-dirty="true"
+            continue="continue">
+    </gumga-form-buttons>    
+</form>
