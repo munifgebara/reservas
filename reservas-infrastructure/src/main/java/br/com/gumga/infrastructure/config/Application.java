@@ -43,10 +43,10 @@ public class Application {
         HikariConfig config = new HikariConfig();
 
         config.setDataSourceClassName("org.postgresql.jdbc2.optional.SimpleDataSource");
-        config.addDataSourceProperty("url", "jdbc:postgresql://192.168.0.105:5432/reservas");
+        config.addDataSourceProperty("url", "jdbc:postgresql://pgsql01.datacoper.com.br:5432/reservas");
         config.addDataSourceProperty("user", "postgres");
         config.addDataSourceProperty("password", "postgres");
-        config.setMaximumPoolSize(20);
+        config.setMaximumPoolSize(5);
 
         config.setIdleTimeout(30000L);
         config.setInitializationFailFast(true);
