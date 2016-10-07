@@ -37,6 +37,7 @@
         <gumga-many-to-many 
                 left-list="recurso.data" 
                 right-list="reserva.data.recurso" 
+                right-search-field="descricao"
                 left-search="recurso.methods.asyncSearch('descricao', param)"
                 filter-parameters="descricao"
                 post-method="recurso.methods.save(value)"
@@ -46,29 +47,39 @@
         </gumga-many-to-many>
     </div>
 	
-    <div gumga-form-class="dataInicio">
-        <label gumga-translate-tag="reserva.dataInicio">Data inicio</label>
-        <p class="input-group">
-            <input type="text" name="dataInicio" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataInicio" is-open="openedDataInicio" ng-click="openedDataInicio = !openedDataInicio" close-text="Close" />
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="opendataInicio()">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                </button>
-            </span>
-        </p>
+    <div class="col-md-4">
+        <div gumga-form-class="dataInicio">
+            <label gumga-translate-tag="reserva.dataInicio">Data inicio</label>
+            <p class="input-group">
+                <input type="text" name="dataInicio" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataInicio" is-open="openedDataInicio" ng-click="openedDataInicio = !openedDataInicio" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="opendataInicio()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div uib-timepicker ng-model="reserva.data.dataInicio" show-meridian="false"></div>
     </div>
 
-    <div gumga-form-class="dataFim">
-        <label gumga-translate-tag="reserva.dataFim">Data fim</label>
-        <p class="input-group">
-            <input type="text" name="dataFim" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataFim" is-open="openedDataFim" ng-click="openedDataFim = !openedDataFim" close-text="Close" />
-            <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="opendataFim()">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                </button>
-            </span>
-        </p>
-    </div>		
+    <div class="col-md-4">
+        <div gumga-form-class="dataFim">
+            <label gumga-translate-tag="reserva.dataFim">Data fim</label>
+            <p class="input-group">
+                <input type="text" name="dataFim" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataFim" is-open="openedDataFim" ng-click="openedDataFim = !openedDataFim" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="opendataFim()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+            </p>
+        </div>		
+    </div>
+    <div class="col-md-2">
+        <div uib-timepicker ng-model="reserva.data.dataFim" show-meridian="false"></div>
+    </div>
 
     <div gumga-form-class="colaborador">
         <label gumga-translate-tag="reserva.colaborador">colaborador</label>
