@@ -42,14 +42,14 @@
 	    </gumga-list>
 	</div>
 
-	<uib-pagination ng-model="page"
+	<ul uib-pagination ng-model="page"
 	            max-size="10"
 	            boundary-links="true"
-	            previous-text="?"
-	            next-Text="?"
-	            first-text="?"
-	            last-text="?"
+	            previous-text="Anterior"
+	            next-Text="Próxima"
+	            first-text="Primeira"
+	            last-text="Última"
 	            items-per-page="reserva.pageSize"
 	            total-items="reserva.count"
 	            ng-change="reserva.methods.get(page)">
-	</uib-pagination>
+	</ul>

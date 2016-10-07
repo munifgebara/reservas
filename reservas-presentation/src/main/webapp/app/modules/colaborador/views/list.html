@@ -28,14 +28,14 @@
 	    </gumga-list>
 	</div>
 
-	<uib-pagination ng-model="page"
+	<ul uib-pagination ng-model="page"
 	            max-size="10"
 	            boundary-links="true"
-	            previous-text="?"
-	            next-Text="?"
-	            first-text="?"
-	            last-text="?"
+	            previous-text="Anterior"
+	            next-Text="Próxima"
+	            first-text="Primeira"
+	            last-text="Última"
 	            items-per-page="colaborador.pageSize"
 	            total-items="colaborador.count"
 	            ng-change="colaborador.methods.get(page)">
-	</uib-pagination>
+	</ul uib-pagination>
