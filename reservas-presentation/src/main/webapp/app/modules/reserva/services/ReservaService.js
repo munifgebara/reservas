@@ -5,6 +5,10 @@ define(['app/apiLocations'], function(APILocation) {
 	function ReservaService(GumgaRest) {
     	var Service = new GumgaRest(APILocation.apiLocation + '/api/reserva');
 
+        Service.getMinhas = function() {
+            return Service.extend('get', '/minhas', {})
+        }
+
     	return Service;
     }
 

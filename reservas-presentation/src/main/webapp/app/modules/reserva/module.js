@@ -19,6 +19,11 @@ define(function(require) {
           templateUrl: 'app/modules/reserva/views/list.html',
           controller: 'ReservaListController'
         })
+        .state('reserva.minhas', {
+          url: '/minhas',
+          templateUrl: 'app/modules/reserva/views/minhas.html',
+          controller: 'ReservaListMinhasController'
+        })
         .state('reserva.insert', {
           url: '/insert',
           templateUrl: 'app/modules/reserva/views/form.html',

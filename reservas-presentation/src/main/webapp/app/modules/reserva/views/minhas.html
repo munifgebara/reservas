@@ -1,0 +1,20 @@
+
+	<div class="full-width-without-padding">
+	    <gumga-list sort="reserva.methods.sort(field, dir)"
+	           class="table-striped table-condensed"
+	            data="reserva.data"
+	            configuration="tableConfig">
+	    </gumga-list>
+	</div>
+
+	<uib-pagination ng-model="page"
+	            max-size="10"
+	            boundary-links="true"
+	            previous-text="?"
+	            next-Text="?"
+	            first-text="?"
+	            last-text="?"
+	            items-per-page="reserva.pageSize"
+	            total-items="reserva.count"
+	            ng-change="reserva.methods.get(page)">
+	</uib-pagination>

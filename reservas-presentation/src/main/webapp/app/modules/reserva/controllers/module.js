@@ -6,5 +6,7 @@ define(function (require) {
     return angular
             .module('app.reserva.controllers', ['app.reserva.services','ui.router'])
             .controller('ReservaFormController', require('app/modules/reserva/controllers/ReservaFormController'))
-            .controller('ReservaListController', require('app/modules/reserva/controllers/ReservaListController'));
+            .controller('ReservaListController', require('app/modules/reserva/controllers/ReservaListController'))
+            .controller('ReservaListMinhasController', require('app/modules/reserva/controllers/ReservaListMinhasController'));
+
 });
