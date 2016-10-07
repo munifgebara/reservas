@@ -11,6 +11,8 @@ import br.com.gumga.reservas.application.repository.ReservaRepository;
 import br.com.gumga.reservas.domain.model.Reserva;
 
 import br.com.gumga.reservas.domain.model.Recurso;
+import gumga.framework.core.QueryObject;
+import gumga.framework.core.SearchResult;
 
 @Service
 public class ReservaService extends GumgaService<Reserva, Long> {
@@ -34,4 +36,11 @@ public class ReservaService extends GumgaService<Reserva, Long> {
 		
 		return obj;
 	}
+
+    public SearchResult<Reserva> consultaMinhasReservas(String email) {
+        QueryObject object=new QueryObject();
+        object.setAq("obj.colaborador.email='"+email+"'");
+        return repository.search(object);
+        
+    }
 }

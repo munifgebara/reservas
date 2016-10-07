@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.validation.BindingResult;
 import gumga.framework.application.GumgaTempFileService;
 import gumga.framework.core.GumgaThreadScope;
+import gumga.framework.core.SearchResult;
 import gumga.framework.domain.domains.GumgaImage;
 import gumga.framework.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,9 +44,11 @@ public class ReservaAPI extends GumgaAPI<Reserva, Long> {
 
     @Transactional
     @RequestMapping(value = {"minhas"}, method = {RequestMethod.GET})
-    public List<Reserva> reservasPorColaborador() {
+    public SearchResult<Reserva> reservasPorColaborador() {
         System.out.println("-------->" + GumgaThreadScope.login.get());
-        return new ArrayList<>();
+        return ((ReservaService) service).
+                consultaMinhasReservas(GumgaThreadScope.login.get());
+
     }
 
 }
