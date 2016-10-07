@@ -40,7 +40,7 @@ public class ReservaService extends GumgaService<Reserva, Long> {
     public SearchResult<Reserva> consultaMinhasReservas(String email) {
         QueryObject object=new QueryObject();
         object.setAq("obj.colaborador.email='"+email+"'");
-        return repository.search(object);
         
+        return repository.search(object);
     }
 }
