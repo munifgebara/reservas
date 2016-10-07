@@ -42,14 +42,10 @@ public class Application {
         GumgaQueryParserProvider.defaultMap = GumgaQueryParserProvider.getOracleLikeMap();
         HikariConfig config = new HikariConfig();
 
-        config.setDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
-        config.addDataSourceProperty("url", "jdbc:mysql://localhost:3306/reservas?zeroDateTimeBehavior=convertToNull");
-        config.addDataSourceProperty("user", "root");
-        config.addDataSourceProperty("password", "senha");
-//        config.setDataSourceClassName("org.h2.jdbcx.JdbcDataSource");
-//        config.addDataSourceProperty("url", "jdbc:h2:mem:test;MVCC=true");
-//        config.addDataSourceProperty("user", "sa");
-//        config.addDataSourceProperty("password", "sa");
+        config.setDataSourceClassName("org.postgresql.jdbc2.optional.SimpleDataSource");
+        config.addDataSourceProperty("url", "jdbc:postgresql://localhost:5432/reservas");
+        config.addDataSourceProperty("user", "postgres");
+        config.addDataSourceProperty("password", "postgres");
         config.setMaximumPoolSize(20);
 
         config.setIdleTimeout(30000L);
@@ -65,11 +61,9 @@ public class Application {
 
         Properties properties = new Properties();
         properties.put("eclipselink.weaving", "false");
-        //properties.put("hibernate.hbm2ddl.auto", "update");
-        //properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 
         properties.put("hibernate.hbm2ddl.auto", "update");
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         properties.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.EJB3NamingStrategy");
         //properties.put("hibernate.show_sql", "true");
         //properties.put("hibernate.format_sql", "true");
