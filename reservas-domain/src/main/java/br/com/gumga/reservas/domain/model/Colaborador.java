@@ -24,6 +24,7 @@ public class Colaborador extends GumgaModel<Long> {
     private Integer version;
 	private String nome;
 	private Integer matricula;
+        private String email;
 
 	public Colaborador() {
 	}
@@ -41,4 +42,15 @@ public class Colaborador extends GumgaModel<Long> {
 	public void setMatricula(Integer matricula) {
 		this.matricula = matricula;
 	}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+        
+        
+        
 }

@@ -1,3 +1,9 @@
 -COLOCAR Número de sala em SALA
 -Mudar o que aparece no manytomany do reserva
+-Colocar mais campos no grid de reserva
+-Acentos no menu
+
+
+JAVA
+Adicionar atributo email ao colaborador   OK
 

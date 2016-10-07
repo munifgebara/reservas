@@ -2,6 +2,7 @@ package br.com.gumga.reservas.api;
 
 import br.com.gumga.reservas.application.service.ReservaService;
 import br.com.gumga.reservas.domain.model.Reserva;
+import com.wordnik.swagger.annotations.ApiOperation;
 import gumga.framework.application.GumgaService;
 import gumga.framework.presentation.GumgaAPI;
 
@@ -16,17 +17,19 @@ import javax.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.validation.BindingResult;
 import gumga.framework.application.GumgaTempFileService;
+import gumga.framework.core.GumgaThreadScope;
 import gumga.framework.domain.domains.GumgaImage;
 import gumga.framework.presentation.GumgaAPI;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/reserva")
 public class ReservaAPI extends GumgaAPI<Reserva, Long> {
-
 
     @Autowired
     public ReservaAPI(GumgaService<Reserva, Long> service) {
@@ -35,8 +38,14 @@ public class ReservaAPI extends GumgaAPI<Reserva, Long> {
 
     @Override
     public Reserva load(@PathVariable Long id) {
-        return ((ReservaService)service).loadReservaFat(id);
+        return ((ReservaService) service).loadReservaFat(id);
     }
 
+    @Transactional
+    @RequestMapping(value = {"minhas"}, method = {RequestMethod.GET})
+    public List<Reserva> reservasPorColaborador() {
+        System.out.println("-------->" + GumgaThreadScope.login.get());
+        return new ArrayList<>();
+    }
 
 }
