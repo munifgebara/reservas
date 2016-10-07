@@ -7,8 +7,12 @@ define([], function() {
     gumgaController.createRestMethods($scope, SalaService, 'sala');
 
     SalaService.resetDefaultState();
-    $scope.sala.execute('get');
 
+    $scope.sala.methods.get($scope.page)
+        .on('deleteSuccess', function(response){
+            $scope.sala.methods.get($scope.page)
+        });
+        
     $scope.tableConfig = {
       columns: 'numero,descricao,button',
       checkbox: true,

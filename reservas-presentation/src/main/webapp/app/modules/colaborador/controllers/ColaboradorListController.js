@@ -7,7 +7,11 @@ define([], function() {
     gumgaController.createRestMethods($scope, ColaboradorService, 'colaborador');
 
     ColaboradorService.resetDefaultState();
-    $scope.colaborador.execute('get');
+    $scope.page = 0
+    $scope.colaborador.methods.get($scope.page)
+        .on('deleteSuccess', function(response){
+            $scope.colaborador.methods.get($scope.page)
+        });
 
     $scope.tableConfig = {
       columns: 'nome, email, button',

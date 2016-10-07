@@ -7,7 +7,12 @@ define([], function() {
     gumgaController.createRestMethods($scope, RecursoService, 'recurso');
 
     RecursoService.resetDefaultState();
-    $scope.recurso.execute('get');
+
+    $scope.page = 0
+    $scope.recurso.methods.get($scope.page)
+        .on('deleteSuccess', function(response){
+            $scope.recurso.methods.get($scope.page)
+        });
 
     $scope.tableConfig = {
       columns: 'codigo, descricao, button',

@@ -7,8 +7,13 @@ define([], function() {
     gumgaController.createRestMethods($scope, ReservaService, 'reserva');
 
     ReservaService.resetDefaultState();
-    $scope.reserva.execute('get');
-
+    
+    $scope.page = 0
+    $scope.reserva.methods.get($scope.page)
+        .on('deleteSuccess', function(response){
+            $scope.reserva.methods.get($scope.page)
+        });
+    
     $scope.tableConfig = {
       columns: 'sala, dataInicio, dataFim, colaborador',
       checkbox: true,
