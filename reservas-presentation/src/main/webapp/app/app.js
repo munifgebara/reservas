@@ -121,7 +121,12 @@ define(function(require) {
           },
           'responseError': function(rejection) {
             var $state = $injector.get('$state');
-            GumgaAlertProvider.createDangerMessage(rejection.data.response, rejection.statusText);
+//            GumgaAlertProvider.createDangerMessage(rejection.data.response, rejection.statusText);
+            var error = {
+                title: rejection.data.response || rejection.data.code,
+                message: rejection.data.response ? rejection.statusText : rejection.data.details
+            }
+            GumgaAlertProvider.createDangerMessage(error.title, error.message);
             rejection.status == 403 && ($state.go('login.log'));
             return $q.reject(rejection);
           }
