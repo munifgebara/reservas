@@ -3,7 +3,7 @@
     "title": "Coisa"
   ,"menulabel": "Coisa "
   ,"id": "Identificador"
-  ,"descricao": "Descri????o"
+  ,"descricao": "Descrição"
   ,"valor": "Valor"
   ,"ativo": "Ativo"
   ,"new": "Novo"
@@ -25,6 +25,8 @@
 
     ,"recurso":{
         "title":"Recurso"
+        ,"available": "Recursos Disponíveis"
+        ,"used": "Recursos Usados"
         ,"menulabel": "Recurso"
         ,"edit": "Editar Recurso"
         ,"insert": "Inserir Recurso"
@@ -44,6 +46,7 @@
         ,"id": "id"
         ,"nome":"Nome"
         ,"matricula":"Matricula"
+        ,"email":"Endereço de e-mail"
     }
 
     ,"reserva":{
@@ -53,25 +56,25 @@
         ,"insert": "Inserir Reserva"
         ,"list": "Consulta Reserva"
         ,"id": "id"
-        ,"datainicio":"DataInicio"
+        ,"datainicio":"Data Inicio"
         ,"descricao":"Descricao"
         ,"sala":"Sala"
         ,"evento":"Evento"
         ,"recurso":"Recurso"
-        ,"datafim":"DataFim"
+        ,"datafim":"Data Fim"
         ,"colaborador":"Colaborador"
     }
 
 ,"address": {
   "cep": "CEP"
-,"numero": "N??mero"
+,"numero": "Número"
 ,"bairro":"Bairro"
 ,"uf":"Estado"
-,"pais": "Pa??s"
+,"pais": "País"
 ,"complemento": "Complemento"
 ,"logradouro": "Logradouro"
 ,"tipologradouro": "Tipo de Logradouro"
-,"localidade": "Localiza????o"
+,"localidade": "Localização"
 }
 ,"formbuttons": {
   "inserir": "Continuar inserindo"
@@ -88,11 +91,11 @@
 ,"eq": "igual "
 ,"ne": "diferente de"
 ,"in": "faz parte de"
-,"not_in": "n??o faz parte de"
-,"contains": "cont??m"
-,"starts_with": "come??a com"
+,"not_in": "não faz parte de"
+,"contains": "contém"
+,"starts_with": "começa com"
 ,"ends_with": "termina com"
-,"not_contains": "n??o cont??m"
+,"not_contains": "não contém"
 },
   "general":{
     "coisa": "Coisa Base",
@@ -102,16 +105,16 @@
      "menulabel": "Welcome"
    },
    "home": {
-  "menulabel": "In??cio"
+  "menulabel": "Início"
 },
 "gumgatagdefinition":{
     "name":"Nome"
     ,"menuLabel": "Tags"
 },
 "configuration": {
-  "menulabel": "Configura????es",
+  "menulabel": "Configurações",
   "gumgatagdefinition": "Tags",
-  "gumgacustomfield": "Atributos Gen??ricos"
+  "gumgacustomfield": "Atributos Genéricos"
 }
 
 }

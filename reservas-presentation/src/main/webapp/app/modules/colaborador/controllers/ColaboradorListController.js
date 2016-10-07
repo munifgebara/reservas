@@ -10,13 +10,18 @@ define([], function() {
     $scope.colaborador.execute('get');
 
     $scope.tableConfig = {
-      columns: 'nome ,button',
+      columns: 'nome, email, button',
       checkbox: true,
       columnsConfig: [{
         name: 'nome',
         title: '<span gumga-translate-tag="colaborador.nome"> nome </span>',
         content: '{{$value.nome }}',
         sortField: 'nome'
+      },{
+        name: 'email',
+        title: '<span gumga-translate-tag="colaborador.email"> email </span>',
+        content: '{{$value.email }}',
+        sortField: 'email'
       }, {
         name: 'button',
         title: ' ',

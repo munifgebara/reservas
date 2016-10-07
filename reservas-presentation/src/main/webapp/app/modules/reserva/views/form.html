@@ -1,94 +1,95 @@
 <form name="ReservaForm" gumga-form novalidate>
-		
-	<div gumga-form-class="dataInicio">
-		<label gumga-translate-tag="reserva.dataInicio">dataInicio</label>
-		<p class="input-group">
-			<input type="text" name="dataInicio" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataInicio" is-open="openedDataInicio" ng-click="openedDataInicio = !openedDataInicio" close-text="Close" />
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default" ng-click="opendataInicio()">
-					<i class="glyphicon glyphicon-calendar"></i>
-				</button>
-			</span>
-		</p>
-	</div>		
-	<div gumga-form-class="descricao">
-		<label gumga-translate-tag="reserva.descricao">descricao</label>
-		<textarea gumga-error type="text" name="descricao" ng-model="reserva.data.descricao.value"  class="form-control"></textarea>
-	</div>		
+    <div gumga-form-class="evento">
+        <label gumga-translate-tag="reserva.evento">evento</label>
+        <input gumga-error type="text" name="evento" ng-model="reserva.data.evento"  class="form-control" />
+    </div>		
 
-	<div gumga-form-class="sala">
-		<label gumga-translate-tag="reserva.sala">sala</label>
-	    <gumga-many-to-one
-	            name="sala"
-	            value="reserva.data.sala"
-	            search-method="sala.methods.asyncSearch('descricao', param)"
-	            field="descricao"
-	            authorize-add="false"
-              display-info="false"
-	            post-method="sala.methods.asyncPost(value, 'descricao')">
-	    </gumga-many-to-one>
-	</div>
+    <div gumga-form-class="descricao">
+        <label gumga-translate-tag="reserva.descricao">descricao</label>
+        <textarea gumga-error type="text" name="descricao" ng-model="reserva.data.descricao.value"  class="form-control"></textarea>
+    </div>		
 
-		
-	<div gumga-form-class="evento">
-		<label gumga-translate-tag="reserva.evento">evento</label>
-		<input gumga-error type="text" name="evento" ng-model="reserva.data.evento"  class="form-control" />
-	</div>		
-
-    <div class="col-md-6">
-        <label for="recurso" gumga-translate-tag="recurso.title"></label>
-    </div>
-    
-    <div class="col-md-6">
-        <label for="reserva.recurso" gumga-translate-tag="reserva.recurso"></label>
+    <div gumga-form-class="sala">
+        <label gumga-translate-tag="reserva.sala">sala</label>
+        <gumga-many-to-one
+            name="sala"
+            value="reserva.data.sala"
+            search-method="sala.methods.asyncSearch('descricao', param)"
+            field="descricao"
+            authorize-add="false"
+            display-info="false"
+            post-method="sala.methods.asyncPost(value, 'descricao')">
+        </gumga-many-to-one>
     </div>
 
-	<div class="full-width-without-padding">
-	    <gumga-many-to-many 
-	            left-list="recurso.data" 
-	            right-list="reserva.data.recurso" 
-	            left-search="recurso.methods.asyncSearch('tipo', param)"
-	            filter-parameters="tipo"
-	            post-method="recurso.methods.save(value)"
-	            authorize-add="true">
-	        <left-field>{{$value.tipo}}</left-field>
-	        <right-field>{{$value.tipo}}</right-field>
-	    </gumga-many-to-many>
-	</div>
+
+    <div>
+        <div class="col-md-6">
+            <label for="recurso" gumga-translate-tag="recurso.available">Recursos</label>
+        </div>
+
+        <div class="col-md-6">
+            <label for="reserva.recurso" gumga-translate-tag="recurso.used">Recursos</label>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <gumga-many-to-many 
+                left-list="recurso.data" 
+                right-list="reserva.data.recurso" 
+                left-search="recurso.methods.asyncSearch('descricao', param)"
+                filter-parameters="descricao"
+                post-method="recurso.methods.save(value)"
+                authorize-add="false">
+            <left-field>{{$value.descricao}}</left-field>
+            <right-field>{{$value.descricao}}</right-field>
+        </gumga-many-to-many>
+    </div>
 	
-		
-	<div gumga-form-class="dataFim">
-		<label gumga-translate-tag="reserva.dataFim">dataFim</label>
-		<p class="input-group">
-			<input type="text" name="dataFim" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataFim" is-open="openedDataFim" ng-click="openedDataFim = !openedDataFim" close-text="Close" />
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default" ng-click="opendataFim()">
-					<i class="glyphicon glyphicon-calendar"></i>
-				</button>
-			</span>
-		</p>
-	</div>		
+    <div gumga-form-class="dataInicio">
+        <label gumga-translate-tag="reserva.dataInicio">Data inicio</label>
+        <p class="input-group">
+            <input type="text" name="dataInicio" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataInicio" is-open="openedDataInicio" ng-click="openedDataInicio = !openedDataInicio" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="opendataInicio()">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+        </p>
+    </div>
 
-	<div gumga-form-class="colaborador">
-		<label gumga-translate-tag="reserva.colaborador">colaborador</label>
-	    <gumga-many-to-one
-	            name="colaborador"
-	            value="reserva.data.colaborador"
-	            search-method="colaborador.methods.asyncSearch('nome', param)"
-	            field="nome"
-	            authorize-add="false"
-              display-info="false"
-	            post-method="colaborador.methods.asyncPost(value, 'nome')">
-	    </gumga-many-to-one>
-	</div>
+    <div gumga-form-class="dataFim">
+        <label gumga-translate-tag="reserva.dataFim">Data fim</label>
+        <p class="input-group">
+            <input type="text" name="dataFim" class="form-control"  uib-datepicker-popup="dd/MM/yyyy" ng-model="reserva.data.dataFim" is-open="openedDataFim" ng-click="openedDataFim = !openedDataFim" close-text="Close" />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="opendataFim()">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+        </p>
+    </div>		
 
-    <gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>
+    <div gumga-form-class="colaborador">
+        <label gumga-translate-tag="reserva.colaborador">colaborador</label>
+        <gumga-many-to-one
+            name="colaborador"
+            value="reserva.data.colaborador"
+            search-method="colaborador.methods.asyncSearch('nome', param)"
+            field="nome"
+            authorize-add="false"
+            display-info="false"
+            post-method="colaborador.methods.asyncPost(value, 'nome')">
+        </gumga-many-to-one>
+    </div>
+
+    <!--<gumga-errors label="Lista de erros" title="Lista de erros"></gumga-errors>-->
     <gumga-form-buttons
-            back="reserva.list"
-            submit="reserva.methods.put(reserva.data)"
-            position="right"
-            valid="ReservaForm.$valid"
-            confirm-dirty="true"
-            continue="continue">
+        back="reserva.list"
+        submit="reserva.methods.put(reserva.data)"
+        position="right"
+        valid="ReservaForm.$valid"
+        confirm-dirty="true"
+        continue="continue">
     </gumga-form-buttons>    
 </form>

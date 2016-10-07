@@ -1,5 +1,10 @@
-[
-    {
+[{
+          "label": "Home",
+          "URL": "welcome",
+          "key": "CRUD-BASE",
+          "icon": "glyphicon glyphicon-home",
+          "filhos": []
+	}, {
         "label": "Reserva",
         "URL": "reserva.list",
         "key": "CRUD-Reserva",
@@ -75,13 +80,7 @@
              }
          ]
     },
-	{
-  "label": "Home",
-  "URL": "welcome",
-  "key": "CRUD-BASE",
-  "icon": "glyphicon glyphicon-home",
-  "filhos": []
-	}	,
+	
 	{
 		"label": "configuration",
 		"URL": "configuration",

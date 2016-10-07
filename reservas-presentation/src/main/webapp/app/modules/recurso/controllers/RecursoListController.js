@@ -10,13 +10,18 @@ define([], function() {
     $scope.recurso.execute('get');
 
     $scope.tableConfig = {
-      columns: 'tipo ,button',
+      columns: 'codigo, descricao, button',
       checkbox: true,
       columnsConfig: [{
-        name: 'tipo',
-        title: '<span gumga-translate-tag="recurso.tipo"> tipo </span>',
-        content: '{{$value.tipo }}',
-        sortField: 'tipo'
+        name: 'descricao',
+        title: '<span gumga-translate-tag="recurso.descricao"> descricao </span>',
+        content: '{{$value.descricao }}',
+        sortField: 'descricao'
+      },{
+        name: 'codigo',
+        title: '<span gumga-translate-tag="recurso.codigo"> codigo </span>',
+        content: '{{$value.codigo }}',
+        sortField: 'codigo'
       }, {
         name: 'button',
         title: ' ',
